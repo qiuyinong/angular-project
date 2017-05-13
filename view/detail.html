@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-default" style="margin-bottom:0px;">
+        <div class="panel-heading">
+            <a href="#/start">首页</a> <span>/</span>
+            <span style="cursor:pointer;">详情</span>
+        </div>
+    </div>
+    <div class="list-group">
+        <li class="list-group-item">
+            <h2>{{dish.name}}</h2>
+            <table class="table">
+                <tr>
+                    <td>
+                        <img ng-src="{{dish.img_l}}" class="img-responsive"/>
+                        <h4 style="margin-bottom:30px;"><strong>主要原料：</strong>{{dish.material}}</h4>
+                        <p>{{dish.detail}}</p>
+                    </td>
+                </tr>
+            </table>
+            <table class="table">
+                <tr>
+                    <td><p style="font-size:20px;color:red;">{{dish.price | currency:'￥'}}</p></td>
+                </tr>
+            </table>
+            <a href="#/order/:{{dish.id}}" class="btn btn-danger btn-lg">我要订餐</a>
+            <a  href="#" class="btn btn-success btn-lg" style="color:#fff;">我的订餐</a>
+        </li>
+    </div>
+</div>
+</body>
+</html>

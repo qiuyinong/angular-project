@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主内容</title>
+</head>
+<body>
+<!-- main-content -->
+<div class="container">
+    <form>
+        <div class="form-group has-feedback">
+            <label class="sr-only control-label" for="dish-search">搜索</label>
+            <input type="text" class="form-control" id="dish-search" placeholder="搜索">
+            <div class="form-control-feedback"><span class=" glyphicon glyphicon-search"></span></div>
+        </div>
+    </form>
+    <div class="list-group">
+        <a href="#/detail/{{dish.id}}" class="list-group-item" ng-repeat="dish in dishList">
+            <div ng-click="jump('/detail/{{dish.did}}')">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <img ng-src="{{dish.img}}">
+                    </div>
+                    <div class="media-body">
+                        <h2 media-heading><strong>{{dish.name}}</strong></h2>
+                        <p><strong>{{dish.material}}</strong></p>
+                        <table class="table" text-align="left" style="color:red;font-size:26px;margin-bottom: 0px;">
+                            <tr><td>{{dish.price | currency:"￥"}}</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <button class="btn btn-success btn-sm btn-block" type="button" style="color:#fff;" ng-click="loadMore()">加载更多</button>
+    <br/>
+</div>
+</body>
+</html>
